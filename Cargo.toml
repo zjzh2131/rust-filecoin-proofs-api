@@ -15,11 +15,16 @@ bincode = "1.1.2"
 blstrs = "0.4.0"
 lazy_static = "1.2"
 serde = "1.0.104"
-filecoin-proofs-v1 = { package = "filecoin-proofs", version = "~11.1", default-features = false }
-filecoin-hashers = { version = "~6.1", default-features = false, features = ["poseidon", "sha256"] }
-fr32 = { version = "~4.1", default-features = false }
-storage-proofs-core = { version = "~11.1", default-features = false }
-storage-proofs-porep = { version = "~11.1", default-features = false }
+#filecoin-proofs-v1 = { package = "filecoin-proofs", version = "~11.1", default-features = false }
+#filecoin-hashers = { version = "~6.1", default-features = false, features = ["poseidon", "sha256"] }
+#fr32 = { version = "~4.1", default-features = false }
+#storage-proofs-core = { version = "~11.1", default-features = false }
+#storage-proofs-porep = { version = "~11.1", default-features = false }
+filecoin-proofs-v1 = { path = "../rust-fil-proofs/filecoin-proofs", package = "filecoin-proofs", default-features = false }
+filecoin-hashers = { path = "../rust-fil-proofs/filecoin-hashers",  default-features = false, features = ["poseidon", "sha256"] }
+fr32 = { path = "../rust-fil-proofs/fr32", default-features = false }
+storage-proofs-core = { path = "../rust-fil-proofs/storage-proofs-core",  default-features = false }
+storage-proofs-porep = { path = "../rust-fil-proofs/storage-proofs-porep",  default-features = false }
 
 [features]
 default = ["opencl"]
